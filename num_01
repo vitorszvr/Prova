@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class CadastroAlunos {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int totalAlunos = 5000;
+        int alunasSistemasInformacao = 0;
+        
+        for (int i = 0; i < totalAlunos; i++) {
+            System.out.println("Digite o sexo do aluno (M/F): ");
+            String sexo = scanner.nextLine();
+            System.out.println("Digite o nome do curso do aluno: ");
+            String curso = scanner.nextLine();
+            
+            if (sexo.equalsIgnoreCase("F") && curso.equalsIgnoreCase("Sistemas de informação")) {
+                alunasSistemasInformacao++;
+            }
+        }
+        
+        double percentualSistemasInformacao = (double) alunasSistemasInformacao / totalAlunos * 100;
+        
+        System.out.println("Número de alunas matriculadas em Sistemas de Informação: " + alunasSistemasInformacao);
+        System.out.println("Percentual de alunos matriculados em Sistemas de Informação: " + percentualSistemasInformacao + "%");
+        
+        scanner.close();
+    }
+}
